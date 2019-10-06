@@ -6,7 +6,8 @@
 </div>
 
 <div align="center">
-    <img src="./snapshot.jpg">
+    <img src="./snapshot_01.jpg"><br>
+    <img src="./snapshot_02.jpg">
 </div>
 
 ### フロントエンド起動
@@ -23,3 +24,7 @@ $ yarn start
 $ cd gin-admin-with-frontend-sample
 $ make start
 ```
+
+### 初期ログインID
++ ID: root
++ PW: abc-123

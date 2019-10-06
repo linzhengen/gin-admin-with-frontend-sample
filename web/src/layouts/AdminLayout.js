@@ -240,12 +240,12 @@ class AdminLayout extends React.PureComponent {
       <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
         <Menu.Item key="updatepwd">
           <Icon type="lock" />
-          修改密码
+          パスワード変更
         </Menu.Item>
         <Menu.Divider />
         <Menu.Item key="logout">
           <Icon type="logout" />
-          退出登录
+          ログアウト
         </Menu.Item>
       </Menu>
     );

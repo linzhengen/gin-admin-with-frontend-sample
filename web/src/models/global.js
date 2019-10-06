@@ -4,7 +4,7 @@ export default {
   namespace: 'global',
 
   state: {
-    title: '権限管理',
+    title: '管理画面',
     copyRight: '2019 Sample Project',
     defaultURL: '/dashboard',
     collapsed: false,

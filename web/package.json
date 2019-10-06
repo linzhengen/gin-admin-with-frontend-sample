@@ -35,6 +35,8 @@
     "setprototypeof": "^1.1.0",
     "url-polyfill": "^1.0.10",
     "uuid": "^3.3.2",
+    "umi": "^2.4.4",
+    "umi-plugin-react": "^1.4.2",
     "yarn-check": "^0.0.3"
   },
   "devDependencies": {
@@ -63,9 +65,7 @@
     "stylelint-config-standard": "^18.0.0",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.10.0",
-    "tslint-react": "^3.6.0",
-    "umi": "^2.4.4",
-    "umi-plugin-react": "^1.4.2"
+    "tslint-react": "^3.6.0"
   },
   "lint-staged": {
     "**/*.{js,jsx,less}": [
