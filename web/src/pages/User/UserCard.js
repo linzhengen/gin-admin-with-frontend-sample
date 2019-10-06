@@ -61,74 +61,78 @@ class UserCard extends PureComponent {
         bodyStyle={{ maxHeight: 'calc( 100vh - 158px )', overflowY: 'auto' }}
       >
         <Form>
-          <Form.Item {...formItemLayout} label="用户名">
+          <Form.Item {...formItemLayout} label="ユーザ名">
             {getFieldDecorator('user_name', {
               initialValue: formData.user_name,
               rules: [
                 {
                   required: true,
-                  message: '请输入用户名',
+                  message: 'ユーザ名を入力してください',
                 },
               ],
-            })(<Input placeholder="请输入用户名" />)}
+            })(<Input placeholder="ユーザ名入力" />)}
           </Form.Item>
-          <Form.Item {...formItemLayout} label="登录密码">
+          <Form.Item {...formItemLayout} label="ログインパスワード">
             {getFieldDecorator('password', {
               initialValue: formData.password,
               rules: [
                 {
                   required: formType === 'A',
-                  message: '请输入登录密码',
+                  message: 'ログインパスワードを入力してください',
                 },
               ],
             })(
               <Input
                 type="password"
-                placeholder={formType === 'A' ? '请输入登录密码' : '留空则不修改登录密码'}
+                placeholder={
+                  formType === 'A'
+                    ? 'ログインパスワードを入力してください'
+                    : '未入力の場合は更新しない'
+                }
               />
             )}
           </Form.Item>
-          <Form.Item {...formItemLayout} label="真实姓名">
+          <Form.Item {...formItemLayout} label="本名">
             {getFieldDecorator('real_name', {
               initialValue: formData.real_name,
               rules: [
                 {
                   required: true,
-                  message: '请输入真实姓名',
+                  message: '本名を入力してください',
                 },
               ],
-            })(<Input placeholder="请输入真实姓名" />)}
+            })(<Input placeholder="本名入力" />)}
           </Form.Item>
-          <Form.Item {...formItemLayout} label="所属角色">
+          <Form.Item {...formItemLayout} label="所属ロール">
             {getFieldDecorator('roles', {
               initialValue: formData.roles,
               rules: [
                 {
                   required: true,
-                  message: '请选择所属角色',
+                  message: 'ロールを選択してください',
                 },
               ],
             })(<RoleSelect />)}
           </Form.Item>
-          <Form.Item {...formItemLayout} label="用户状态">
+          <Form.Item {...formItemLayout} label="ユーザステータス">
             {getFieldDecorator('status', {
               initialValue: formData.status ? formData.status.toString() : '1',
             })(
               <Radio.Group>
-                <Radio value="1">正常</Radio>
-                <Radio value="2">停用</Radio>
+                <Radio value="1">有効</Radio>
+                <Radio value="2">無効</Radio>
               </Radio.Group>
             )}
           </Form.Item>
-          <Form.Item {...formItemLayout} label="邮箱">
+          <Form.Item {...formItemLayout} label="メールアドレス">
             {getFieldDecorator('email', {
               initialValue: formData.email,
-            })(<Input placeholder="请输入邮箱" />)}
+            })(<Input placeholder="メールアドレス" />)}
           </Form.Item>
-          <Form.Item {...formItemLayout} label="手机号">
+          <Form.Item {...formItemLayout} label="電話番号">
             {getFieldDecorator('phone', {
               initialValue: formData.phone,
-            })(<Input placeholder="请输入手机号" />)}
+            })(<Input placeholder="電話番号を入力してください" />)}
           </Form.Item>
         </Form>
       </Modal>

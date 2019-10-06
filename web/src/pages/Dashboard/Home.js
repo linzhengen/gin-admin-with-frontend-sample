@@ -32,7 +32,7 @@ class Home extends PureComponent {
     const text = [];
     if (roleNames && roleNames.length > 0) {
       text.push(
-        <span key="role" style={{ marginRight: 20 }}>{`所属角色：${roleNames.join('/')}`}</span>
+        <span key="role" style={{ marginRight: 20 }}>{`所属ロール：${roleNames.join('/')}`}</span>
       );
     }
 
@@ -49,14 +49,14 @@ class Home extends PureComponent {
 
     const { currentTime } = this.state;
 
-    const breadcrumbList = [{ title: '首页' }];
+    const breadcrumbList = [{ title: 'トップ' }];
 
     return (
       <PageHeaderLayout
-        title={`您好，${user.real_name}，祝您开心每一天！`}
+        title={`Hello，${user.real_name}，よい毎日を！`}
         breadcrumbList={breadcrumbList}
         content={this.getHeaderContent()}
-        action={<span>当前时间：{currentTime}</span>}
+        action={<span>現在時間：{currentTime}</span>}
       >
         <div className={styles.index} />
       </PageHeaderLayout>

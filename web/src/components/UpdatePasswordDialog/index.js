@@ -17,7 +17,7 @@ class UpdatePasswordDialog extends PureComponent {
         return;
       }
       if (values.new_password !== values.confirm_new_password) {
-        message.warning('新密码与确认新密码不一致！');
+        message.warning('２回入力した新しいパスワードは一致していません');
         return;
       }
 
@@ -28,7 +28,7 @@ class UpdatePasswordDialog extends PureComponent {
       };
       updatePwd(formData).then(res => {
         if (res.status === 'OK') {
-          message.success('密码更新成功！');
+          message.success('パスワード更新に成功しました');
           this.handleCancel();
         }
         this.setState({ submitting: false });
@@ -67,7 +67,7 @@ class UpdatePasswordDialog extends PureComponent {
 
     return (
       <Modal
-        title="修改个人密码"
+        title="パスワード変更"
         width={450}
         visible={visible}
         maskClosable={false}
@@ -79,35 +79,35 @@ class UpdatePasswordDialog extends PureComponent {
         bodyStyle={{ maxHeight: 'calc( 100vh - 158px )', overflowY: 'auto' }}
       >
         <Form>
-          <Form.Item {...formItemLayout} label="旧密码">
+          <Form.Item {...formItemLayout} label="現在のパスワード">
             {getFieldDecorator('old_password', {
               rules: [
                 {
                   required: true,
-                  message: '请输入旧密码',
+                  message: '現在のパスワードを入力してください',
                 },
               ],
-            })(<Input type="password" placeholder="请输入旧密码" />)}
+            })(<Input type="password" placeholder="現在のパスワード" />)}
           </Form.Item>
-          <Form.Item {...formItemLayout} label="新密码">
+          <Form.Item {...formItemLayout} label="新しいパスワード">
             {getFieldDecorator('new_password', {
               rules: [
                 {
                   required: true,
-                  message: '请输入新密码',
+                  message: '新しいパスワードを入力してください',
                 },
               ],
-            })(<Input type="password" placeholder="请输入新密码" />)}
+            })(<Input type="password" placeholder="新しいパスワード" />)}
           </Form.Item>
-          <Form.Item {...formItemLayout} label="确认旧密码">
+          <Form.Item {...formItemLayout} label="現在のパスワードの確認">
             {getFieldDecorator('confirm_new_password', {
               rules: [
                 {
                   required: true,
-                  message: '请输入确认旧密码',
+                  message: '現在のパスワードを入力してください',
                 },
               ],
-            })(<Input type="password" placeholder="请输入确认旧密码" />)}
+            })(<Input type="password" placeholder="現在のパスワード" />)}
           </Form.Item>
         </Form>
       </Modal>

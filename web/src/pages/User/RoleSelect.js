@@ -53,7 +53,7 @@ export default class RoleSelect extends PureComponent {
         mode="tags"
         value={value}
         onChange={this.handleChange}
-        placeholder="请选择角色"
+        placeholder="ロール選択してください"
         style={{ width: '100%' }}
       >
         {data.map(item => (

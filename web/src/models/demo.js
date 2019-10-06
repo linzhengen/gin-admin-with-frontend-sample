@@ -67,7 +67,7 @@ export default {
         }),
         put({
           type: 'saveFormTitle',
-          payload: '新建基础示例',
+          payload: '新規',
         }),
         put({
           type: 'saveFormID',
@@ -83,7 +83,7 @@ export default {
         yield [
           put({
             type: 'saveFormTitle',
-            payload: '编辑基础示例',
+            payload: '編集',
           }),
           put({
             type: 'saveFormID',
@@ -127,7 +127,7 @@ export default {
       });
 
       if (response.record_id && response.record_id !== '') {
-        message.success('保存成功');
+        message.success('保存に成功しました');
         yield put({
           type: 'changeFormVisible',
           payload: false,
@@ -140,7 +140,7 @@ export default {
     *del({ payload }, { call, put }) {
       const response = yield call(demoService.del, payload);
       if (response.status === 'OK') {
-        message.success('删除成功');
+        message.success('削除に成功しました');
         yield put({ type: 'fetch' });
       }
     },
@@ -153,9 +153,9 @@ export default {
       }
 
       if (response.status === 'OK') {
-        let msg = '启用成功';
+        let msg = '有効に更新しました';
         if (payload.status === 2) {
-          msg = '停用成功';
+          msg = '無効に更新しました';
         }
         message.success(msg);
         const data = yield select(state => state.demo.data);

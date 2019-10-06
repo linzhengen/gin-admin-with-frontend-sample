@@ -62,8 +62,8 @@ class MenuList extends PureComponent {
     }
     const item = selectedRows[0];
     Modal.confirm({
-      title: `确定删除【菜单数据：${item.name}】？`,
-      okText: '确认',
+      title: `削除確認【メニューデータ：${item.name}】？`,
+      okText: '確認',
       okType: 'danger',
       cancelText: '取消',
       onOk: this.handleDelOKClick.bind(this, item.record_id),
@@ -195,19 +195,19 @@ class MenuList extends PureComponent {
       <Form onSubmit={this.onSearchFormSubmit} layout="inline">
         <Row gutter={8}>
           <Col span={8}>
-            <Form.Item label="菜单名称">
-              {getFieldDecorator('name')(<Input placeholder="请输入" />)}
+            <Form.Item label="メニュー名">
+              {getFieldDecorator('name')(<Input placeholder="入力してください" />)}
             </Form.Item>
           </Col>
           <Col span={10}>
-            <Form.Item label="隐藏状态">
+            <Form.Item label="表示">
               {getFieldDecorator('hidden', {
                 initialValue: '-1',
               })(
                 <Radio.Group>
-                  <Radio value="-1">全部</Radio>
-                  <Radio value="0">显示</Radio>
-                  <Radio value="1">隐藏</Radio>
+                  <Radio value="-1">全て</Radio>
+                  <Radio value="0">表示</Radio>
+                  <Radio value="1">非表示</Radio>
                 </Radio.Group>
               )}
             </Form.Item>
@@ -216,10 +216,10 @@ class MenuList extends PureComponent {
             <div style={{ overflow: 'hidden' }}>
               <span style={{ marginBottom: 24 }}>
                 <Button type="primary" htmlType="submit">
-                  查询
+                  検索
                 </Button>
                 <Button style={{ marginLeft: 8 }} onClick={this.onResetFormClick}>
-                  重置
+                  リセット
                 </Button>
               </span>
             </div>
@@ -243,34 +243,34 @@ class MenuList extends PureComponent {
 
     const columns = [
       {
-        title: '菜单名称',
+        title: 'メニュー名',
         dataIndex: 'name',
         width: 150,
       },
       {
-        title: '排序值',
+        title: '表示順',
         dataIndex: 'sequence',
         width: 100,
       },
       {
-        title: '隐藏状态',
+        title: '表示',
         dataIndex: 'hidden',
         width: 100,
         render: val => {
-          let title = '显示';
+          let title = '表示';
           if (val === 1) {
-            title = '隐藏';
+            title = '非表示';
           }
           return <span>{title}</span>;
         },
       },
       {
-        title: '菜单图标',
+        title: 'アイコン',
         dataIndex: 'icon',
         width: 100,
       },
       {
-        title: '访问路由',
+        title: 'ルーター',
         dataIndex: 'router',
       },
     ];
@@ -282,10 +282,13 @@ class MenuList extends PureComponent {
       ...pagination,
     };
 
-    const breadcrumbList = [{ title: '系统管理' }, { title: '菜单管理', href: '/system/menu' }];
+    const breadcrumbList = [
+      { title: 'システム管理' },
+      { title: 'メニュー管理', href: '/system/menu' },
+    ];
 
     return (
-      <PageHeaderLayout title="菜单管理" breadcrumbList={breadcrumbList}>
+      <PageHeaderLayout title="メニュー管理" breadcrumbList={breadcrumbList}>
         <Layout>
           <Layout.Sider
             width={200}
@@ -337,7 +340,7 @@ class MenuList extends PureComponent {
                     type="primary"
                     onClick={() => this.handleAddClick()}
                   >
-                    新建
+                    新規作成
                   </PButton>
                   {selectedRowKeys.length === 1 && [
                     <PButton
@@ -346,7 +349,7 @@ class MenuList extends PureComponent {
                       icon="edit"
                       onClick={() => this.handleEditClick()}
                     >
-                      编辑
+                      編集
                     </PButton>,
                     <PButton
                       key="del"
@@ -355,7 +358,7 @@ class MenuList extends PureComponent {
                       type="danger"
                       onClick={() => this.handleDelClick()}
                     >
-                      删除
+                      削除
                     </PButton>,
                   ]}
                 </div>

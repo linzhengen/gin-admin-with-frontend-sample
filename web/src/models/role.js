@@ -68,7 +68,7 @@ export default {
         }),
         put({
           type: 'saveFormTitle',
-          payload: '新建角色',
+          payload: 'ロール追加',
         }),
         put({
           type: 'saveFormID',
@@ -84,7 +84,7 @@ export default {
         yield [
           put({
             type: 'saveFormTitle',
-            payload: '编辑角色',
+            payload: 'ロール編集',
           }),
           put({
             type: 'saveFormID',
@@ -129,7 +129,7 @@ export default {
       });
 
       if (response.record_id && response.record_id !== '') {
-        message.success('保存成功');
+        message.success('保存に成功しました');
         yield put({
           type: 'changeFormVisible',
           payload: false,
@@ -142,7 +142,7 @@ export default {
     *del({ payload }, { call, put }) {
       const response = yield call(roleService.del, payload);
       if (response.status === 'OK') {
-        message.success('删除成功');
+        message.success('削除に成功しました');
         yield put({ type: 'fetch' });
       }
     },

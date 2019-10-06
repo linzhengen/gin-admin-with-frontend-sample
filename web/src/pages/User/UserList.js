@@ -79,8 +79,8 @@ class UserList extends PureComponent {
 
   onItemDelClick = item => {
     Modal.confirm({
-      title: `确定删除【用户数据：${item.user_name}】？`,
-      okText: '确认',
+      title: `削除確認【ユーザデータ：${item.user_name}】？`,
+      okText: '確認',
       okType: 'danger',
       cancelText: '取消',
       onOk: this.onDelOKClick.bind(this, item.record_id),
@@ -179,27 +179,27 @@ class UserList extends PureComponent {
       <Form onSubmit={this.onSearchFormSubmit}>
         <Row gutter={16}>
           <Col span={8}>
-            <Form.Item label="用户名">
-              {getFieldDecorator('user_name')(<Input placeholder="请输入" />)}
+            <Form.Item label="ユーザ名">
+              {getFieldDecorator('user_name')(<Input placeholder="入力してください" />)}
             </Form.Item>
           </Col>
           <Col span={8}>
-            <Form.Item label="真实姓名">
-              {getFieldDecorator('real_name')(<Input placeholder="请输入" />)}
+            <Form.Item label="本名">
+              {getFieldDecorator('real_name')(<Input placeholder="入力してください" />)}
             </Form.Item>
           </Col>
           <Col span={8}>
-            <Form.Item label="所属角色">{getFieldDecorator('role_ids')(<RoleSelect />)}</Form.Item>
+            <Form.Item label="ロール">{getFieldDecorator('role_ids')(<RoleSelect />)}</Form.Item>
           </Col>
         </Row>
         <Row gutter={16}>
           <Col span={8}>
-            <Form.Item label="用户状态">
+            <Form.Item label="ユーザステータス">
               {getFieldDecorator('status', { initialValue: '0' })(
                 <Radio.Group>
-                  <Radio value="0">全部</Radio>
-                  <Radio value="1">正常</Radio>
-                  <Radio value="2">停用</Radio>
+                  <Radio value="0">全て</Radio>
+                  <Radio value="1">有効</Radio>
+                  <Radio value="2">無効</Radio>
                 </Radio.Group>
               )}
             </Form.Item>
@@ -208,10 +208,10 @@ class UserList extends PureComponent {
             <div style={{ overflow: 'hidden' }}>
               <span style={{ marginBottom: 24 }}>
                 <Button type="primary" htmlType="submit">
-                  查询
+                  検索
                 </Button>
                 <Button style={{ marginLeft: 8 }} onClick={this.onResetFormClick}>
-                  重置
+                  リセット
                 </Button>
               </span>
             </div>
@@ -232,15 +232,15 @@ class UserList extends PureComponent {
     const { selectedRows, selectedRowKeys } = this.state;
     const columns = [
       {
-        title: '用户名',
+        title: 'ユーザ名',
         dataIndex: 'user_name',
       },
       {
-        title: '真实姓名',
+        title: '本名',
         dataIndex: 'real_name',
       },
       {
-        title: '角色名称',
+        title: 'ロール名',
         dataIndex: 'roles',
         render: val => {
           if (!val || val.length === 0) {
@@ -254,25 +254,25 @@ class UserList extends PureComponent {
         },
       },
       {
-        title: '用户状态',
+        title: 'ユーザステータス',
         dataIndex: 'status',
         render: val => {
           if (val === 1) {
-            return <Badge status="success" text="启用" />;
+            return <Badge status="success" text="有効" />;
           }
-          return <Badge status="error" text="停用" />;
+          return <Badge status="error" text="無効" />;
         },
       },
       {
-        title: '邮箱',
+        title: 'メールアドレス',
         dataIndex: 'email',
       },
       {
-        title: '手机号',
+        title: '電話番号',
         dataIndex: 'phone',
       },
       {
-        title: '创建时间',
+        title: '作成日時',
         dataIndex: 'created_at',
         render: val => <span>{formatDate(val, 'YYYY-MM-DD HH:mm')}</span>,
       },
@@ -286,13 +286,13 @@ class UserList extends PureComponent {
     };
 
     return (
-      <PageHeaderLayout title="用户管理">
+      <PageHeaderLayout title="ユーザ管理">
         <Card bordered={false}>
           <div className={styles.tableList}>
             <div className={styles.tableListForm}>{this.renderSearchForm()}</div>
             <div className={styles.tableListOperator}>
               <PButton code="add" icon="plus" type="primary" onClick={() => this.onAddClick()}>
-                新建
+                新規作成
               </PButton>
               {selectedRows.length === 1 && [
                 <PButton
@@ -301,7 +301,7 @@ class UserList extends PureComponent {
                   icon="edit"
                   onClick={() => this.onItemEditClick(selectedRows[0])}
                 >
-                  编辑
+                  編集
                 </PButton>,
                 <PButton
                   key="del"
@@ -310,7 +310,7 @@ class UserList extends PureComponent {
                   type="danger"
                   onClick={() => this.onItemDelClick(selectedRows[0])}
                 >
-                  删除
+                  削除
                 </PButton>,
                 selectedRows[0].status === 2 && (
                   <PButton
@@ -319,7 +319,7 @@ class UserList extends PureComponent {
                     icon="check"
                     onClick={() => this.onItemEnableClick(selectedRows[0])}
                   >
-                    启用
+                    有効
                   </PButton>
                 ),
                 selectedRows[0].status === 1 && (
@@ -330,7 +330,7 @@ class UserList extends PureComponent {
                     type="danger"
                     onClick={() => this.onItemDisableClick(selectedRows[0])}
                   >
-                    禁用
+                    無効
                   </PButton>
                 ),
               ]}

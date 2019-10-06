@@ -72,14 +72,14 @@ class Login extends PureComponent {
               rules: [
                 {
                   required: true,
-                  message: '请输入用户名！',
+                  message: 'ユーザ名を入力してください',
                 },
               ],
             })(
               <Input
                 size="large"
                 prefix={<Icon type="user" className={styles.prefixIcon} />}
-                placeholder="请输入用户名"
+                placeholder="ユーザ名を入力してください"
               />
             )}
           </Form.Item>
@@ -88,7 +88,7 @@ class Login extends PureComponent {
               rules: [
                 {
                   required: true,
-                  message: '请输入密码！',
+                  message: 'パスワードを入力してください！',
                 },
               ],
             })(
@@ -96,7 +96,7 @@ class Login extends PureComponent {
                 size="large"
                 prefix={<Icon type="lock" className={styles.prefixIcon} />}
                 type="password"
-                placeholder="请输入密码"
+                placeholder="パスワードを入力してください！"
               />
             )}
           </Form.Item>
@@ -106,7 +106,7 @@ class Login extends PureComponent {
                 rules: [
                   {
                     required: true,
-                    message: '请输入验证码！',
+                    message: '認証コードを入力してください！',
                   },
                 ],
               })(
@@ -114,7 +114,7 @@ class Login extends PureComponent {
                   style={{ width: '70%', marginRight: 10 }}
                   size="large"
                   prefix={<Icon type="code" className={styles.prefixIcon} />}
-                  placeholder="请输入验证码"
+                  placeholder="認証コードを入力してください"
                 />
               )}
               <div
@@ -126,7 +126,7 @@ class Login extends PureComponent {
                 <img
                   style={{ maxWidth: '100%', maxHeight: '100%' }}
                   src={login.captcha}
-                  alt="验证码"
+                  alt="認証コード"
                   onClick={() => {
                     this.reloadCaptcha();
                   }}
@@ -142,7 +142,7 @@ class Login extends PureComponent {
               type="primary"
               htmlType="submit"
             >
-              登录
+              ログイン
             </Button>
           </Form.Item>
         </Form>

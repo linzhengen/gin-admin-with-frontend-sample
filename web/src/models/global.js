@@ -4,15 +4,15 @@ export default {
   namespace: 'global',
 
   state: {
-    title: '权限管理脚手架',
-    copyRight: '2019 LyricTian',
+    title: '権限管理',
+    copyRight: '2019 Sample Project',
     defaultURL: '/dashboard',
     collapsed: false,
     openKeys: [],
     selectedKeys: [],
     user: {
       user_name: 'admin',
-      real_name: '管理员',
+      real_name: '管理者',
       role_names: [],
     },
     menuPaths: {},

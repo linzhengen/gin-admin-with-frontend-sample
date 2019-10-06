@@ -87,20 +87,20 @@ class MenuCard extends PureComponent {
           <Form>
             <Row>
               <Col span={12}>
-                <Form.Item {...formItemLayout} label="菜单名称">
+                <Form.Item {...formItemLayout} label="メニュー名">
                   {getFieldDecorator('name', {
                     initialValue: formData.name,
                     rules: [
                       {
                         required: true,
-                        message: '请输入菜单名称',
+                        message: 'メニュー名を入力してください',
                       },
                     ],
-                  })(<Input placeholder="请输入" />)}
+                  })(<Input placeholder="入力してください" />)}
                 </Form.Item>
               </Col>
               <Col span={12}>
-                <Form.Item {...formItemLayout} label="上级菜单">
+                <Form.Item {...formItemLayout} label="親メニュー">
                   {getFieldDecorator('parent_id', {
                     initialValue: formData.parent_id,
                   })(
@@ -110,7 +110,7 @@ class MenuCard extends PureComponent {
                       style={{ width: '100%' }}
                       dropdownStyle={{ maxHeight: 400, overflow: 'auto' }}
                       treeData={this.toTreeSelect(treeData)}
-                      placeholder="请选择"
+                      placeholder="選択してください"
                     />
                   )}
                 </Form.Item>
@@ -118,7 +118,7 @@ class MenuCard extends PureComponent {
             </Row>
             <Row>
               <Col span={12}>
-                <Form.Item {...formItemLayout} label="菜单图标">
+                <Form.Item {...formItemLayout} label="アイコン">
                   <Row>
                     <Col span={20}>
                       {getFieldDecorator('icon', {
@@ -126,13 +126,13 @@ class MenuCard extends PureComponent {
                         rules: [
                           {
                             required: true,
-                            message: '请输入菜单图标',
+                            message: 'アイコンを入力してください',
                           },
                         ],
-                      })(<Input placeholder="请输入" />)}
+                      })(<Input placeholder="入力してください" />)}
                     </Col>
                     <Col span={4} style={{ textAlign: 'center' }}>
-                      <Tooltip title="图标仅支持官方Icon图标">
+                      <Tooltip title="公式アイコンのみ使用可">
                         <Icon type="question-circle" />
                       </Tooltip>
                     </Col>
@@ -140,35 +140,35 @@ class MenuCard extends PureComponent {
                 </Form.Item>
               </Col>
               <Col span={12}>
-                <Form.Item {...formItemLayout} label="访问路由">
+                <Form.Item {...formItemLayout} label="ルーター">
                   {getFieldDecorator('router', {
                     initialValue: formData.router,
-                  })(<Input placeholder="请输入" />)}
+                  })(<Input placeholder="入力してください" />)}
                 </Form.Item>
               </Col>
             </Row>
             <Row>
               <Col span={12}>
-                <Form.Item {...formItemLayout} label="排序值">
+                <Form.Item {...formItemLayout} label="表示順">
                   {getFieldDecorator('sequence', {
                     initialValue: formData.sequence ? formData.sequence.toString() : '1000000',
                     rules: [
                       {
                         required: true,
-                        message: '请输入排序值',
+                        message: '表示順を入力してください',
                       },
                     ],
                   })(<InputNumber min={1} style={{ width: '80%' }} />)}
                 </Form.Item>
               </Col>
               <Col span={12}>
-                <Form.Item {...formItemLayout} label="隐藏状态">
+                <Form.Item {...formItemLayout} label="表示">
                   {getFieldDecorator('hidden', {
                     initialValue: formData.hidden ? formData.hidden.toString() : '0',
                   })(
                     <Radio.Group>
-                      <Radio value="0">显示</Radio>
-                      <Radio value="1">隐藏</Radio>
+                      <Radio value="0">表示</Radio>
+                      <Radio value="1">非表示</Radio>
                     </Radio.Group>
                   )}
                 </Form.Item>
@@ -176,7 +176,7 @@ class MenuCard extends PureComponent {
             </Row>
             <Row>
               <Col span={24}>
-                <Card title="菜单动作管理" bordered={false}>
+                <Card title="アクション管理" bordered={false}>
                   {getFieldDecorator('actions', {
                     initialValue: formData.actions,
                   })(<MenuAction />)}
@@ -185,7 +185,7 @@ class MenuCard extends PureComponent {
             </Row>
             <Row>
               <Col span={24}>
-                <Card title="菜单资源管理" bordered={false}>
+                <Card title="リソース管理" bordered={false}>
                   {getFieldDecorator('resources', {
                     initialValue: formData.resources,
                   })(<MenuResource />)}

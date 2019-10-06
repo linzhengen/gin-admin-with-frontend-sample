@@ -25,25 +25,25 @@ export default class MenuAction extends PureComponent {
 
     this.columns = [
       {
-        title: '资源编号',
+        title: 'リソースコード',
         dataIndex: 'code',
         editable: true,
         width: '20%',
       },
       {
-        title: '资源名称',
+        title: 'リソース名',
         dataIndex: 'name',
         editable: true,
         width: '22%',
       },
       {
-        title: '请求方式',
+        title: 'メソッドタイプ',
         dataIndex: 'method',
         editable: true,
         width: '15%',
       },
       {
-        title: '请求路径',
+        title: 'リクエストパス',
         dataIndex: 'path',
         editable: true,
       },
@@ -57,8 +57,11 @@ export default class MenuAction extends PureComponent {
             return null;
           }
           return (
-            <Popconfirm title="确定要删除该数据吗?" onConfirm={() => this.handleDelete(record.key)}>
-              <a>删除</a>
+            <Popconfirm
+              title="データを削除してよろしいですか"
+              onConfirm={() => this.handleDelete(record.key)}
+            >
+              <a>削除</a>
             </Popconfirm>
           );
         },
@@ -86,31 +89,31 @@ export default class MenuAction extends PureComponent {
     const tplData = [
       {
         code: 'query',
-        name: `查询${item.name}`,
+        name: `${item.name}の検索`,
         method: 'GET',
         path: item.router,
       },
       {
         code: 'get',
-        name: `精确查询${item.name}`,
+        name: `${item.name}の詳細`,
         method: 'GET',
         path: `${item.router}/:id`,
       },
       {
         code: 'create',
-        name: `创建${item.name}`,
+        name: `${item.name}の新規作成`,
         method: 'POST',
         path: item.router,
       },
       {
         code: 'update',
-        name: `更新${item.name}`,
+        name: `${item.name}の更新`,
         method: 'PUT',
         path: `${item.router}/:id`,
       },
       {
         code: 'delete',
-        name: `删除${item.name}`,
+        name: `${item.name}の削除`,
         method: 'DELETE',
         path: `${item.router}/:id`,
       },
@@ -226,10 +229,10 @@ export default class MenuAction extends PureComponent {
       <div className={styles.tableList}>
         <div className={styles.tableListOperator}>
           <Button onClick={this.handleAdd} size="small" type="primary">
-            新增
+            新規作成
           </Button>
           <Button onClick={this.handleAddTpl} size="small" type="primary">
-            使用模板
+            テンプレート使用
           </Button>
         </div>
         <Table

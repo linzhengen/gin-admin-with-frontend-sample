@@ -118,167 +118,167 @@ func createMenus(ctx context.Context, trans bll.ITrans, menu bll.IMenu, parentID
 const menuData = `
 [
   {
-    "name": "首页",
+    "name": "トップページ",
     "icon": "dashboard",
     "router": "/dashboard",
     "sequence": 1900000
   },
   {
-    "name": "系统管理",
+    "name": "システム管理",
     "icon": "setting",
     "sequence": 1100000,
     "children": [
       {
-        "name": "菜单管理",
+        "name": "メニュー管理",
         "icon": "solution",
         "router": "/system/menu",
         "sequence": 1190000,
         "actions": [
-          { "code": "add", "name": "新增" },
-          { "code": "edit", "name": "编辑" },
-          { "code": "del", "name": "删除" },
-          { "code": "query", "name": "查询" }
+          { "code": "add", "name": "新規作成" },
+          { "code": "edit", "name": "編集" },
+          { "code": "del", "name": "削除" },
+          { "code": "query", "name": "検索" }
         ],
         "resources": [
           {
             "code": "query",
-            "name": "查询菜单数据",
+            "name": "メニュー検索",
             "method": "GET",
             "path": "/api/v1/menus"
           },
           {
             "code": "get",
-            "name": "精确查询菜单数据",
+            "name": "メニュー詳細",
             "method": "GET",
             "path": "/api/v1/menus/:id"
           },
           {
             "code": "create",
-            "name": "创建菜单数据",
+            "name": "メニュー新規作成",
             "method": "POST",
             "path": "/api/v1/menus"
           },
           {
             "code": "update",
-            "name": "更新菜单数据",
+            "name": "メニュー更新",
             "method": "PUT",
             "path": "/api/v1/menus/:id"
           },
           {
             "code": "delete",
-            "name": "删除菜单数据",
+            "name": "メニュー削除",
             "method": "DELETE",
             "path": "/api/v1/menus/:id"
           }
         ]
       },
       {
-        "name": "角色管理",
+        "name": "ロール管理",
         "icon": "audit",
         "router": "/system/role",
         "sequence": 1180000,
         "actions": [
-          { "code": "add", "name": "新增" },
-          { "code": "edit", "name": "编辑" },
-          { "code": "del", "name": "删除" },
-          { "code": "query", "name": "查询" }
+          { "code": "add", "name": "新規作成" },
+          { "code": "edit", "name": "編集" },
+          { "code": "del", "name": "削除" },
+          { "code": "query", "name": "検索" }
         ],
         "resources": [
           {
             "code": "query",
-            "name": "查询角色数据",
+            "name": "ロール検索",
             "method": "GET",
             "path": "/api/v1/roles"
           },
           {
             "code": "get",
-            "name": "精确查询角色数据",
+            "name": "ロール詳細",
             "method": "GET",
             "path": "/api/v1/roles/:id"
           },
           {
             "code": "create",
-            "name": "创建角色数据",
+            "name": "ロール新規作成",
             "method": "POST",
             "path": "/api/v1/roles"
           },
           {
             "code": "update",
-            "name": "更新角色数据",
+            "name": "ロール詳細",
             "method": "PUT",
             "path": "/api/v1/roles/:id"
           },
           {
             "code": "delete",
-            "name": "删除角色数据",
+            "name": "ロール削除",
             "method": "DELETE",
             "path": "/api/v1/roles/:id"
           },
           {
             "code": "queryMenu",
-            "name": "查询菜单数据",
+            "name": "ロール検索",
             "method": "GET",
             "path": "/api/v1/menus"
           }
         ]
       },
       {
-        "name": "用户管理",
+        "name": "ユーザ管理",
         "icon": "user",
         "router": "/system/user",
         "sequence": 1170000,
         "actions": [
-          { "code": "add", "name": "新增" },
-          { "code": "edit", "name": "编辑" },
-          { "code": "del", "name": "删除" },
-          { "code": "query", "name": "查询" }
+          { "code": "add", "name": "新規作成" },
+          { "code": "edit", "name": "編集" },
+          { "code": "del", "name": "削除" },
+          { "code": "query", "name": "検索" }
         ],
         "resources": [
           {
             "code": "query",
-            "name": "查询用户数据",
+            "name": "ユーザ検索",
             "method": "GET",
             "path": "/api/v1/users"
           },
           {
             "code": "get",
-            "name": "精确查询用户数据",
+            "name": "ユーザ詳細",
             "method": "GET",
             "path": "/api/v1/users/:id"
           },
           {
             "code": "create",
-            "name": "创建用户数据",
+            "name": "ユーザ新規作成",
             "method": "POST",
             "path": "/api/v1/users"
           },
           {
             "code": "update",
-            "name": "更新用户数据",
+            "name": "ユーザ更新",
             "method": "PUT",
             "path": "/api/v1/users/:id"
           },
           {
             "code": "delete",
-            "name": "删除用户数据",
+            "name": "ユーザ削除",
             "method": "DELETE",
             "path": "/api/v1/users/:id"
           },
           {
             "code": "disable",
-            "name": "禁用用户数据",
+            "name": "ユーザ無効更新",
             "method": "PATCH",
             "path": "/api/v1/users/:id/disable"
           },
           {
             "code": "enable",
-            "name": "启用用户数据",
+            "name": "ユーザ有効更新",
             "method": "PATCH",
             "path": "/api/v1/users/:id/enable"
           },
           {
             "code": "queryRole",
-            "name": "查询角色数据",
+            "name": "ロールリスト",
             "method": "GET",
             "path": "/api/v1/roles"
           }

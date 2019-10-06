@@ -19,7 +19,7 @@ class RoleCard extends PureComponent {
       const formData = { ...values };
       formData.sequence = parseInt(formData.sequence, 10);
       if (!formData.menus || formData.menus.length === 0) {
-        message.warning('请选择菜单权限！');
+        message.warning('メニューのロールを選択してください！');
         return;
       }
       onSubmit(formData);
@@ -63,42 +63,42 @@ class RoleCard extends PureComponent {
         <Form>
           <Row>
             <Col>
-              <Form.Item {...formItemLayout} label="角色名称">
+              <Form.Item {...formItemLayout} label="ロール">
                 {getFieldDecorator('name', {
                   initialValue: formData.name,
                   rules: [
                     {
                       required: true,
-                      message: '请输入角色名称',
+                      message: 'ロールを入力してください',
                     },
                   ],
-                })(<Input placeholder="请输入角色名称" />)}
+                })(<Input placeholder="ロール名入力" />)}
               </Form.Item>
             </Col>
             <Col>
-              <Form.Item {...formItemLayout} label="排序值">
+              <Form.Item {...formItemLayout} label="表示順">
                 {getFieldDecorator('sequence', {
                   initialValue: formData.sequence ? formData.sequence.toString() : '1000000',
                   rules: [
                     {
                       required: true,
-                      message: '请输入排序值',
+                      message: '表示順を入力してください',
                     },
                   ],
                 })(<InputNumber min={1} style={{ width: '100%' }} />)}
               </Form.Item>
             </Col>
             <Col>
-              <Form.Item {...formItemLayout} label="备注">
+              <Form.Item {...formItemLayout} label="備考">
                 {getFieldDecorator('memo', {
                   initialValue: formData.memo,
-                })(<Input.TextArea rows={2} placeholder="请输入备注" />)}
+                })(<Input.TextArea rows={2} placeholder="備考の入力" />)}
               </Form.Item>
             </Col>
           </Row>
           <Row>
             <Col span={24}>
-              <Card title="选择菜单权限" bordered={false}>
+              <Card title="ロール選択" bordered={false}>
                 {getFieldDecorator('menus', {
                   initialValue: formData.menus,
                 })(<RoleMenu />)}

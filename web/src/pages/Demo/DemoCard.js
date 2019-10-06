@@ -56,40 +56,40 @@ class DemoCard extends PureComponent {
         bodyStyle={{ maxHeight: 'calc( 100vh - 158px )', overflowY: 'auto' }}
       >
         <Form>
-          <Form.Item {...formItemLayout} label="编号">
+          <Form.Item {...formItemLayout} label="コード">
             {getFieldDecorator('code', {
               initialValue: formData.code,
               rules: [
                 {
                   required: true,
-                  message: '请输入编号',
+                  message: 'コードを入力してください',
                 },
               ],
-            })(<Input placeholder="请输入编号" />)}
+            })(<Input placeholder="コード入力" />)}
           </Form.Item>
-          <Form.Item {...formItemLayout} label="名称">
+          <Form.Item {...formItemLayout} label="タイトル">
             {getFieldDecorator('name', {
               initialValue: formData.name,
               rules: [
                 {
                   required: true,
-                  message: '请输入名称',
+                  message: 'タイトルを入力してください',
                 },
               ],
-            })(<Input placeholder="请输入名称" />)}
+            })(<Input placeholder="タイトル入力" />)}
           </Form.Item>
-          <Form.Item {...formItemLayout} label="备注">
+          <Form.Item {...formItemLayout} label="備考">
             {getFieldDecorator('memo', {
               initialValue: formData.memo,
-            })(<Input.TextArea rows={2} placeholder="请输入备注" />)}
+            })(<Input.TextArea rows={2} placeholder="備考入力" />)}
           </Form.Item>
-          <Form.Item {...formItemLayout} label="状态">
+          <Form.Item {...formItemLayout} label="ステータス">
             {getFieldDecorator('status', {
               initialValue: formData.status ? formData.status.toString() : '1',
             })(
               <Radio.Group>
-                <Radio value="1">正常</Radio>
-                <Radio value="2">停用</Radio>
+                <Radio value="1">有効</Radio>
+                <Radio value="2">無効</Radio>
               </Radio.Group>
             )}
           </Form.Item>

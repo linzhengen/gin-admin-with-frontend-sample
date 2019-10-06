@@ -70,7 +70,7 @@ export default {
         }),
         put({
           type: 'saveFormTitle',
-          payload: '新建菜单',
+          payload: 'メニュー追加',
         }),
         put({
           type: 'saveFormID',
@@ -87,7 +87,7 @@ export default {
         yield [
           put({
             type: 'saveFormTitle',
-            payload: '编辑菜单',
+            payload: 'メニュー編集',
           }),
           put({
             type: 'saveFormID',
@@ -139,7 +139,7 @@ export default {
       });
 
       if (success) {
-        message.success('保存成功');
+        message.success('保存に成功しました');
         yield put({
           type: 'changeFormVisible',
           payload: false,
@@ -152,7 +152,7 @@ export default {
     *del({ payload }, { call, put }) {
       const response = yield call(menuService.del, payload);
       if (response.status === 'OK') {
-        message.success('删除成功');
+        message.success('削除に成功しました');
         yield put({ type: 'fetchTree' });
         yield put({ type: 'fetch' });
       }

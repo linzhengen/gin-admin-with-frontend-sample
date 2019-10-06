@@ -24,13 +24,13 @@ export default class MenuAction extends PureComponent {
 
     this.columns = [
       {
-        title: '动作编号',
+        title: 'コード',
         dataIndex: 'code',
         editable: true,
         width: '40%',
       },
       {
-        title: '动作名称',
+        title: '名称',
         dataIndex: 'name',
         editable: true,
         width: '45%',
@@ -45,8 +45,11 @@ export default class MenuAction extends PureComponent {
             return null;
           }
           return (
-            <Popconfirm title="确定要删除该数据吗?" onConfirm={() => this.handleDelete(record.key)}>
-              <a>删除</a>
+            <Popconfirm
+              title="データを削除してよろしいですか"
+              onConfirm={() => this.handleDelete(record.key)}
+            >
+              <a>削除</a>
             </Popconfirm>
           );
         },
@@ -80,19 +83,19 @@ export default class MenuAction extends PureComponent {
     const tplData = [
       {
         code: 'add',
-        name: '新增',
+        name: '新規',
       },
       {
         code: 'edit',
-        name: '编辑',
+        name: '編集',
       },
       {
         code: 'del',
-        name: '删除',
+        name: '削除',
       },
       {
         code: 'query',
-        name: '查询',
+        name: '検索',
       },
     ];
 
@@ -189,10 +192,10 @@ export default class MenuAction extends PureComponent {
       <div className={styles.tableList}>
         <div className={styles.tableListOperator}>
           <Button onClick={this.handleAdd} size="small" type="primary">
-            新增
+            新規作成
           </Button>
           <Button onClick={this.handleAddTpl} size="small" type="primary">
-            使用模板
+            テンプレート使用
           </Button>
         </div>
         <Table

@@ -78,8 +78,8 @@ class DemoList extends PureComponent {
 
   onItemDelClick = item => {
     Modal.confirm({
-      title: `确定删除【基础示例数据：${item.name}】？`,
-      okText: '确认',
+      title: `削除確認【デモデータ：${item.name}】？`,
+      okText: '確認',
       okType: 'danger',
       cancelText: '取消',
       onOk: this.onDelOKClick.bind(this, item.record_id),
@@ -170,21 +170,21 @@ class DemoList extends PureComponent {
       <Form onSubmit={this.onSearchFormSubmit} layout="inline">
         <Row gutter={16}>
           <Col md={8} sm={24}>
-            <Form.Item label="编号">
-              {getFieldDecorator('code')(<Input placeholder="请输入" />)}
+            <Form.Item label="コード">
+              {getFieldDecorator('code')(<Input placeholder="入力してください" />)}
             </Form.Item>
           </Col>
           <Col md={8} sm={24}>
             <Form.Item label="名称">
-              {getFieldDecorator('name')(<Input placeholder="请输入" />)}
+              {getFieldDecorator('name')(<Input placeholder="入力してください" />)}
             </Form.Item>
           </Col>
           <Col md={8} sm={24}>
-            <Form.Item label="状态">
+            <Form.Item label="ステータス">
               {getFieldDecorator('status')(
-                <Select placeholder="请选择" style={{ width: '100%' }}>
-                  <Select.Option value="1">正常</Select.Option>
-                  <Select.Option value="2">停用</Select.Option>
+                <Select placeholder="選択してください" style={{ width: '100%' }}>
+                  <Select.Option value="1">有効</Select.Option>
+                  <Select.Option value="2">無効</Select.Option>
                 </Select>
               )}
             </Form.Item>
@@ -193,10 +193,10 @@ class DemoList extends PureComponent {
         <div style={{ overflow: 'hidden' }}>
           <span style={{ float: 'right', marginBottom: 24 }}>
             <Button type="primary" htmlType="submit">
-              查询
+              検索
             </Button>
             <Button style={{ marginLeft: 8 }} onClick={this.onResetFormClick}>
-              重置
+              リセット
             </Button>
           </span>
         </div>
@@ -216,29 +216,29 @@ class DemoList extends PureComponent {
 
     const columns = [
       {
-        title: '编号',
+        title: 'コード',
         dataIndex: 'code',
       },
       {
-        title: '名称',
+        title: 'タイトル',
         dataIndex: 'name',
       },
       {
-        title: '备注',
+        title: '備考',
         dataIndex: 'memo',
       },
       {
-        title: '状态',
+        title: 'ステータス',
         dataIndex: 'status',
         render: val => {
           if (val === 1) {
-            return <Badge status="success" text="启用" />;
+            return <Badge status="success" text="有効" />;
           }
-          return <Badge status="error" text="停用" />;
+          return <Badge status="error" text="無効" />;
         },
       },
       {
-        title: '创建时间',
+        title: '作成日時',
         dataIndex: 'created_at',
         render: val => <span>{formatDate(val, 'YYYY-MM-DD HH:mm')}</span>,
       },
@@ -251,16 +251,16 @@ class DemoList extends PureComponent {
       ...pagination,
     };
 
-    const breadcrumbList = [{ title: '演示用例' }, { title: '基础示例', href: '/example/demo' }];
+    const breadcrumbList = [{ title: 'デモ' }, { title: 'デモページ', href: '/example/demo' }];
 
     return (
-      <PageHeaderLayout title="基础示例" breadcrumbList={breadcrumbList}>
+      <PageHeaderLayout title="デモページ" breadcrumbList={breadcrumbList}>
         <Card bordered={false}>
           <div className={styles.tableList}>
             <div className={styles.tableListForm}>{this.renderSearchForm()}</div>
             <div className={styles.tableListOperator}>
               <PButton code="add" icon="plus" type="primary" onClick={() => this.onAddClick()}>
-                新建
+                新規
               </PButton>
               {selectedRows.length === 1 && [
                 <PButton
@@ -269,7 +269,7 @@ class DemoList extends PureComponent {
                   icon="edit"
                   onClick={() => this.onItemEditClick(selectedRows[0])}
                 >
-                  编辑
+                  編集
                 </PButton>,
                 <PButton
                   key="del"
@@ -278,7 +278,7 @@ class DemoList extends PureComponent {
                   type="danger"
                   onClick={() => this.onItemDelClick(selectedRows[0])}
                 >
-                  删除
+                  削除
                 </PButton>,
                 selectedRows[0].status === 2 && (
                   <PButton
@@ -287,7 +287,7 @@ class DemoList extends PureComponent {
                     icon="check"
                     onClick={() => this.onItemEnableClick(selectedRows[0])}
                   >
-                    启用
+                    有効
                   </PButton>
                 ),
                 selectedRows[0].status === 1 && (
@@ -298,7 +298,7 @@ class DemoList extends PureComponent {
                     type="danger"
                     onClick={() => this.onItemDisableClick(selectedRows[0])}
                   >
-                    禁用
+                    無効
                   </PButton>
                 ),
               ]}

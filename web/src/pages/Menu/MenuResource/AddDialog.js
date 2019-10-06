@@ -38,7 +38,7 @@ class AddDialog extends PureComponent {
 
     return (
       <Modal
-        title="菜单资源模板"
+        title="メニューリソーステンプレート"
         width={450}
         visible={visible}
         maskClosable={false}
@@ -49,36 +49,36 @@ class AddDialog extends PureComponent {
         bodyStyle={{ maxHeight: 'calc( 100vh - 158px )', overflowY: 'auto' }}
       >
         <Form>
-          <Form.Item {...formItemLayout} label="资源名">
+          <Form.Item {...formItemLayout} label="リソース名">
             <Row>
               <Col span={20}>
                 {getFieldDecorator('name', {
                   rules: [
                     {
                       required: true,
-                      message: '请输入资源名',
+                      message: 'リソース名を入力してください',
                     },
                   ],
-                })(<Input placeholder="请输入资源名" />)}
+                })(<Input placeholder="リソース名入力" />)}
               </Col>
               <Col span={4} style={{ textAlign: 'center' }}>
-                <Tooltip title="例：用户数据">
+                <Tooltip title="例：ユーザデータ">
                   <Icon type="question-circle" />
                 </Tooltip>
               </Col>
             </Row>
           </Form.Item>
-          <Form.Item {...formItemLayout} label="资源路由">
+          <Form.Item {...formItemLayout} label="リソースルーター">
             <Row>
               <Col span={20}>
                 {getFieldDecorator('router', {
                   rules: [
                     {
                       required: true,
-                      message: '请输入资源路由',
+                      message: 'リソースルーターを入力してください',
                     },
                   ],
-                })(<Input placeholder="请输入资源路由" />)}
+                })(<Input placeholder="リソースルーター入力" />)}
               </Col>
               <Col span={4} style={{ textAlign: 'center' }}>
                 <Tooltip title="例：/api/v1/users">

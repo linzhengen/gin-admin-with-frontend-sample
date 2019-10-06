@@ -66,7 +66,7 @@ export default {
         }),
         put({
           type: 'saveFormTitle',
-          payload: '新建用户',
+          payload: 'ユーザ追加',
         }),
         put({
           type: 'saveFormID',
@@ -82,7 +82,7 @@ export default {
         yield [
           put({
             type: 'saveFormTitle',
-            payload: '编辑用户',
+            payload: 'ユーザ編集',
           }),
           put({
             type: 'saveFormID',
@@ -124,7 +124,7 @@ export default {
       });
 
       if (response.record_id && response.record_id !== '') {
-        message.success('保存成功');
+        message.success('保存に成功しました');
         yield put({
           type: 'changeFormVisible',
           payload: false,
@@ -137,7 +137,7 @@ export default {
     *del({ payload }, { call, put }) {
       const response = yield call(userService.del, payload);
       if (response.status === 'OK') {
-        message.success('删除成功');
+        message.success('削除に成功しました');
         yield put({ type: 'fetch' });
       }
     },
@@ -150,9 +150,9 @@ export default {
       }
 
       if (response.status === 'OK') {
-        let msg = '启用成功';
+        let msg = '有効に更新しました';
         if (payload.status === 2) {
-          msg = '停用成功';
+          msg = '無効に更新しました';
         }
         message.success(msg);
         const data = yield select(state => state.user.data);

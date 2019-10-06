@@ -31,7 +31,7 @@ export class EditableCell extends PureComponent {
             rules: [
               {
                 required: true,
-                message: `请选择${title}`,
+                message: `${title}を選択してください`,
               },
             ],
             initialValue: record[dataIndex],
@@ -61,7 +61,7 @@ export class EditableCell extends PureComponent {
           rules: [
             {
               required: true,
-              message: `请输入${title}`,
+              message: `${title}を入力してください`,
             },
           ],
           initialValue: record[dataIndex],

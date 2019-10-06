@@ -60,8 +60,8 @@ class RoleList extends PureComponent {
 
   handleDelClick = item => {
     Modal.confirm({
-      title: `确定删除【角色数据：${item.name}】？`,
-      okText: '确认',
+      title: `削除確認【ロールデータ：${item.name}】？`,
+      okText: '確認',
       okType: 'danger',
       cancelText: '取消',
       onOk: this.handleDelOKClick.bind(this, item.record_id),
@@ -158,18 +158,18 @@ class RoleList extends PureComponent {
       <Form onSubmit={this.handleSearchFormSubmit} layout="inline">
         <Row gutter={16}>
           <Col md={8} sm={24}>
-            <Form.Item label="角色名称">
-              {getFieldDecorator('name')(<Input placeholder="请输入" />)}
+            <Form.Item label="ロール名">
+              {getFieldDecorator('name')(<Input placeholder="入力してください" />)}
             </Form.Item>
           </Col>
           <Col md={8} sm={24}>
             <div style={{ overflow: 'hidden' }}>
               <span style={{ marginBottom: 24 }}>
                 <Button type="primary" htmlType="submit">
-                  查询
+                  検索
                 </Button>
                 <Button style={{ marginLeft: 8 }} onClick={this.handleResetFormClick}>
-                  重置
+                  リセット
                 </Button>
               </span>
             </div>
@@ -191,17 +191,17 @@ class RoleList extends PureComponent {
 
     const columns = [
       {
-        title: '角色名称',
+        title: 'ロール名',
         dataIndex: 'name',
         width: 200,
       },
       {
-        title: '排序值',
+        title: '表示順',
         dataIndex: 'sequence',
         width: 100,
       },
       {
-        title: '角色备注',
+        title: '備考',
         dataIndex: 'memo',
       },
     ];
@@ -213,16 +213,19 @@ class RoleList extends PureComponent {
       ...pagination,
     };
 
-    const breadcrumbList = [{ title: '系统管理' }, { title: '角色管理', href: '/system/role' }];
+    const breadcrumbList = [
+      { title: 'システム管理' },
+      { title: 'ロール管理', href: '/system/role' },
+    ];
 
     return (
-      <PageHeaderLayout title="角色管理" breadcrumbList={breadcrumbList}>
+      <PageHeaderLayout title="ロール管理" breadcrumbList={breadcrumbList}>
         <Card bordered={false}>
           <div className={styles.tableList}>
             <div className={styles.tableListForm}>{this.renderSearchForm()}</div>
             <div className={styles.tableListOperator}>
               <PButton code="add" icon="plus" type="primary" onClick={() => this.handleAddClick()}>
-                新建
+                新規作成
               </PButton>
               {selectedRows.length === 1 && [
                 <PButton
@@ -231,7 +234,7 @@ class RoleList extends PureComponent {
                   icon="edit"
                   onClick={() => this.handleEditClick(selectedRows[0])}
                 >
-                  编辑
+                  編集
                 </PButton>,
                 <PButton
                   key="del"
@@ -240,7 +243,7 @@ class RoleList extends PureComponent {
                   type="danger"
                   onClick={() => this.handleDelClick(selectedRows[0])}
                 >
-                  删除
+                  削除
                 </PButton>,
               ]}
             </div>
