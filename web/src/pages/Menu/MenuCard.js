@@ -162,7 +162,7 @@ class MenuCard extends PureComponent {
                 </Form.Item>
               </Col>
               <Col span={12}>
-                <Form.Item {...formItemLayout} label="表示">
+                <Form.Item {...formItemLayout} label="ステータス">
                   {getFieldDecorator('hidden', {
                     initialValue: formData.hidden ? formData.hidden.toString() : '0',
                   })(

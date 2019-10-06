@@ -200,7 +200,7 @@ class MenuList extends PureComponent {
             </Form.Item>
           </Col>
           <Col span={10}>
-            <Form.Item label="表示">
+            <Form.Item label="ステータス">
               {getFieldDecorator('hidden', {
                 initialValue: '-1',
               })(
@@ -253,7 +253,7 @@ class MenuList extends PureComponent {
         width: 100,
       },
       {
-        title: '表示',
+        title: 'ステータス',
         dataIndex: 'hidden',
         width: 100,
         render: val => {
