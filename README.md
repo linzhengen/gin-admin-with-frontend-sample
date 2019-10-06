@@ -28,3 +28,8 @@ $ make start
 ### 初期ログインID
 + ID: root
 + PW: abc-123
+
+### リンク
++ [https://github.com/LyricTian/gin-admin](https://github.com/LyricTian/gin-admin)
++ [https://github.com/LyricTian/gin-admin-react](https://github.com/LyricTian/gin-admin-react)
++ [https://github.com/LyricTian/gin-admin-cli](https://github.com/LyricTian/gin-admin-cli)
