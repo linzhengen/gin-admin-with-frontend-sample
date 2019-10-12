@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"runtime"
 
-	"github.com/LyricTian/gin-admin/internal/app/ginplus"
-	"github.com/LyricTian/gin-admin/pkg/logger"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/ginplus"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/logger"
 	"github.com/gin-gonic/gin"
 )
 

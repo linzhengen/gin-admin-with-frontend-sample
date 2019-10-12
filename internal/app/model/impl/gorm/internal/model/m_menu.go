@@ -3,10 +3,10 @@ package model
 import (
 	"context"
 
-	"github.com/LyricTian/gin-admin/internal/app/errors"
-	"github.com/LyricTian/gin-admin/internal/app/model/impl/gorm/internal/entity"
-	"github.com/LyricTian/gin-admin/internal/app/schema"
-	"github.com/LyricTian/gin-admin/pkg/gormplus"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/errors"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/model/impl/gorm/internal/entity"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/schema"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/gormplus"
 )
 
 // NewMenu 创建菜单存储实例

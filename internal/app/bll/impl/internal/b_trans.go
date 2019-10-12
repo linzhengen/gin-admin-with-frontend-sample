@@ -3,7 +3,7 @@ package internal
 import (
 	"context"
 
-	"github.com/LyricTian/gin-admin/internal/app/model"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/model"
 )
 
 // NewTrans 创建角色管理实例

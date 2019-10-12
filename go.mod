@@ -1,4 +1,4 @@
-module github.com/LyricTian/gin-admin
+module github.com/linzhengen/gin-admin-with-frontend-sample
 
 require (
 	github.com/BurntSushi/toml v0.3.1

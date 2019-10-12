@@ -12,7 +12,7 @@ package api
 
 import (
 	// API控制器
-	_ "github.com/LyricTian/gin-admin/internal/app/routers/api/ctl"
+	_ "github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/routers/api/ctl"
 )
 
 // @Version 4.0.0

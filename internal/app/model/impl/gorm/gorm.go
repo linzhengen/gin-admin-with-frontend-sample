@@ -1,10 +1,10 @@
 package gorm
 
 import (
-	"github.com/LyricTian/gin-admin/internal/app/model"
-	"github.com/LyricTian/gin-admin/internal/app/model/impl/gorm/internal/entity"
-	imodel "github.com/LyricTian/gin-admin/internal/app/model/impl/gorm/internal/model"
-	"github.com/LyricTian/gin-admin/pkg/gormplus"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/model"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/model/impl/gorm/internal/entity"
+	imodel "github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/model/impl/gorm/internal/model"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/gormplus"
 	"go.uber.org/dig"
 )
 

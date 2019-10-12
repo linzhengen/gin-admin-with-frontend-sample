@@ -5,9 +5,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	"github.com/LyricTian/gin-admin/internal/app/model/impl/gorm"
-	"github.com/LyricTian/gin-admin/pkg/gormplus"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/config"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/model/impl/gorm"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/gormplus"
 	"go.uber.org/dig"
 )
 

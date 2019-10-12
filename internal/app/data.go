@@ -3,10 +3,10 @@ package app
 import (
 	"context"
 
-	"github.com/LyricTian/gin-admin/internal/app/bll"
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	"github.com/LyricTian/gin-admin/internal/app/schema"
-	"github.com/LyricTian/gin-admin/pkg/util"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/bll"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/config"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/schema"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/util"
 	"go.uber.org/dig"
 )
 

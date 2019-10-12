@@ -3,7 +3,7 @@ package bll
 import (
 	"context"
 
-	"github.com/LyricTian/gin-admin/internal/app/schema"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/schema"
 )
 
 // IDemo demo业务逻辑接口

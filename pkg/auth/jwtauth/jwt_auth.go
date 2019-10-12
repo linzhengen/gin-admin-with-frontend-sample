@@ -3,7 +3,7 @@ package jwtauth
 import (
 	"time"
 
-	"github.com/LyricTian/gin-admin/pkg/auth"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/auth"
 	jwt "github.com/dgrijalva/jwt-go"
 )
 

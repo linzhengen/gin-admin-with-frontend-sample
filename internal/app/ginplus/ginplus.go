@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"strings"
 
-	icontext "github.com/LyricTian/gin-admin/internal/app/context"
-	"github.com/LyricTian/gin-admin/internal/app/errors"
-	"github.com/LyricTian/gin-admin/internal/app/schema"
-	"github.com/LyricTian/gin-admin/pkg/logger"
-	"github.com/LyricTian/gin-admin/pkg/util"
+	icontext "github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/context"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/errors"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/schema"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/logger"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/util"
 	"github.com/gin-gonic/gin"
 )
 

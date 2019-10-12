@@ -5,11 +5,11 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	"github.com/LyricTian/gin-admin/pkg/logger"
-	loggerhook "github.com/LyricTian/gin-admin/pkg/logger/hook"
-	loggergormhook "github.com/LyricTian/gin-admin/pkg/logger/hook/gorm"
-	"github.com/LyricTian/gin-admin/pkg/util"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/config"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/logger"
+	loggerhook "github.com/linzhengen/gin-admin-with-frontend-sample/pkg/logger/hook"
+	loggergormhook "github.com/linzhengen/gin-admin-with-frontend-sample/pkg/logger/hook/gorm"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/util"
 )
 
 // InitLogger 初始化日志

@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/LyricTian/gin-admin/internal/app/config"
-	"github.com/LyricTian/gin-admin/internal/app/middleware"
-	"github.com/LyricTian/gin-admin/internal/app/routers/api"
-	"github.com/LyricTian/gin-admin/pkg/logger"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/config"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/middleware"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/routers/api"
+	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/logger"
 	"github.com/gin-gonic/gin"
 	"go.uber.org/dig"
 )
