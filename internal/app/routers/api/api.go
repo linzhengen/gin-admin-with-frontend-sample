@@ -1,11 +1,11 @@
 package api
 
 import (
+	"github.com/casbin/casbin"
+	"github.com/gin-gonic/gin"
 	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/middleware"
 	"github.com/linzhengen/gin-admin-with-frontend-sample/internal/app/routers/api/ctl"
 	"github.com/linzhengen/gin-admin-with-frontend-sample/pkg/auth"
-	"github.com/casbin/casbin"
-	"github.com/gin-gonic/gin"
 	"go.uber.org/dig"
 )
 
@@ -24,6 +24,7 @@ func RegisterRouter(app *gin.Engine, container *dig.Container) error {
 		cMenu *ctl.Menu,
 		cRole *ctl.Role,
 		cUser *ctl.User,
+		cBuyerOrder *ctl.BuyerOrder,
 	) error {
 
 		g := app.Group("/api")
@@ -98,6 +99,13 @@ func RegisterRouter(app *gin.Engine, container *dig.Container) error {
 			v1.DELETE("/users/:id", cUser.Delete)
 			v1.PATCH("/users/:id/enable", cUser.Enable)
 			v1.PATCH("/users/:id/disable", cUser.Disable)
+
+			// 注册/api/v1/buyer_orders
+			v1.GET("/buyer_orders", cBuyerOrder.Query)
+			v1.GET("/buyer_orders/:id", cBuyerOrder.Get)
+			v1.POST("/buyer_orders", cBuyerOrder.Create)
+			v1.PUT("/buyer_orders/:id", cBuyerOrder.Update)
+			v1.DELETE("/buyer_orders/:id", cBuyerOrder.Delete)
 		}
 
 		return nil

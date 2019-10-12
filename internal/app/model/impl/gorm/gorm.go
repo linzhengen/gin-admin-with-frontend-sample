@@ -24,6 +24,7 @@ func AutoMigrate(db *gormplus.DB) error {
 		new(entity.Menu),
 		new(entity.MenuAction),
 		new(entity.MenuResource),
+		new(entity.BuyerOrder),
 	).Error
 }
 
@@ -39,5 +40,6 @@ func Inject(container *dig.Container) error {
 	container.Provide(imodel.NewMenu, dig.As(new(model.IMenu)))
 	container.Provide(imodel.NewRole, dig.As(new(model.IRole)))
 	container.Provide(imodel.NewUser, dig.As(new(model.IUser)))
+	container.Provide(imodel.NewBuyerOrder, dig.As(new(model.IBuyerOrder)))
 	return nil
 }

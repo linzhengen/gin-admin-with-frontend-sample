@@ -25,6 +25,10 @@ export default [
           { path: '/system/user', component: './User/UserList' },
         ],
       },
+      {
+        path: '/buyer',
+        routes: [{ path: '/buyer/order', component: './Buyer/BuyerOrder' }],
+      },
     ],
   },
   {
