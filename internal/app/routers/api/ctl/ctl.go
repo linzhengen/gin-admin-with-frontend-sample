@@ -17,5 +17,6 @@ func Inject(container *dig.Container) error {
 	container.Provide(NewRole)
 	container.Provide(NewUser)
 	container.Provide(NewBuyerOrder)
+	container.Provide(NewBuyerProductItem)
 	return nil
 }

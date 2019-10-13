@@ -76,3 +76,15 @@ func (a BuyerOrders) ToSchemaBuyerOrders() []*schema.BuyerOrder {
 	}
 	return list
 }
+
+// BuyerOrderProductItem 订单货品关联实体
+type BuyerOrderProductItem struct {
+	Model
+	OrderID       string `gorm:"column:order_id;size:38;index;"`        // 订单号
+	ProductItemID string `gorm:"column:product_item_id;size:36;index;"` // 货物号
+}
+
+// TableName 表名
+func (a BuyerOrderProductItem) TableName() string {
+	return a.Model.TableName("buyer_product_item")
+}

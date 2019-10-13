@@ -25,6 +25,7 @@ func RegisterRouter(app *gin.Engine, container *dig.Container) error {
 		cRole *ctl.Role,
 		cUser *ctl.User,
 		cBuyerOrder *ctl.BuyerOrder,
+		cBuyerProductItem *ctl.BuyerProductItem,
 	) error {
 
 		g := app.Group("/api")
@@ -106,6 +107,13 @@ func RegisterRouter(app *gin.Engine, container *dig.Container) error {
 			v1.POST("/buyer_orders", cBuyerOrder.Create)
 			v1.PUT("/buyer_orders/:id", cBuyerOrder.Update)
 			v1.DELETE("/buyer_orders/:id", cBuyerOrder.Delete)
+
+			// 注册/api/v1/buyer_product_items
+			v1.GET("/buyer_product_items", cBuyerProductItem.Query)
+			v1.GET("/buyer_product_items/:id", cBuyerProductItem.Get)
+			v1.POST("/buyer_product_items", cBuyerProductItem.Create)
+			v1.PUT("/buyer_product_items/:id", cBuyerProductItem.Update)
+			v1.DELETE("/buyer_product_items/:id", cBuyerProductItem.Delete)
 		}
 
 		return nil

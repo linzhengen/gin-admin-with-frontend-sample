@@ -20,5 +20,6 @@ func Inject(container *dig.Container) error {
 	container.Provide(internal.NewRole, dig.As(new(bll.IRole)))
 	container.Provide(internal.NewUser, dig.As(new(bll.IUser)))
 	container.Provide(internal.NewBuyerOrder, dig.As(new(bll.IBuyerOrder)))
+	container.Provide(internal.NewBuyerProductItem, dig.As(new(bll.IBuyerProductItem)))
 	return nil
 }
