@@ -79,7 +79,7 @@ func (a Menu) String() string {
 
 // TableName 表名
 func (a Menu) TableName() string {
-	return a.Model.TableName("menu")
+	return a.Model.TableName("menus")
 }
 
 // ToSchemaMenu 转换为菜单对象
@@ -135,7 +135,7 @@ type MenuAction struct {
 
 // TableName 表名
 func (a MenuAction) TableName() string {
-	return a.Model.TableName("menu_action")
+	return a.Model.TableName("menu_actions")
 }
 
 // ToSchemaMenuAction 转换为菜单动作对象
@@ -204,7 +204,7 @@ type MenuResource struct {
 
 // TableName 表名
 func (a MenuResource) TableName() string {
-	return a.Model.TableName("menu_resource")
+	return a.Model.TableName("menu_resources")
 }
 
 // ToSchemaMenuResource 转换为菜单资源对象

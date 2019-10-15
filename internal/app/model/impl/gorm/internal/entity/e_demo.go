@@ -45,7 +45,7 @@ func (a Demo) String() string {
 
 // TableName 表名
 func (a Demo) TableName() string {
-	return a.Model.TableName("demo")
+	return a.Model.TableName("demos")
 }
 
 // ToSchemaDemo 转换为demo对象

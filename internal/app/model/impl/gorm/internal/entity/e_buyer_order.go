@@ -37,7 +37,7 @@ type BuyerOrder struct {
 	Status               *string    `gorm:"column:status;size:32;"`                         // 交易状态
 	SumProductPayment    *float64   `gorm:"column:sum_product_payment;type:decimal(10,2);"` // 产品总金额
 	TotalAmount          *float64   `gorm:"column:total_amount;type:decimal(10,2);"`        // 应付款总金额
-	ShippingFee          *float64   `gorm:"column:total_amount;type:decimal(10,2);"`        // 运费
+	ShippingFee          *float64   `gorm:"column:shipping_fee;type:decimal(10,2);"`        // 运费
 	EntryDiscount        *float64   `gorm:"column:entry_discount;type:decimal(10,2);"`      // 订单明细涨价或降价的金额
 	CreateTime           *time.Time `gorm:"column:create_time;"`                            // 创建时间
 	ModifyTime           *time.Time `gorm:"column:modify_time;"`                            // 修改时间
@@ -53,7 +53,7 @@ func (a BuyerOrder) String() string {
 
 // TableName 表名
 func (a BuyerOrder) TableName() string {
-	return a.Model.TableName("buyer_order")
+	return a.Model.TableName("buyer_orders")
 }
 
 // ToSchemaBuyerOrder 转换为仕入詳細对象
@@ -86,5 +86,5 @@ type BuyerOrderProductItem struct {
 
 // TableName 表名
 func (a BuyerOrderProductItem) TableName() string {
-	return a.Model.TableName("buyer_product_item")
+	return a.Model.TableName("buyer_order_product_items")
 }

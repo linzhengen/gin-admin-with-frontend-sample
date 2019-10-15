@@ -27,8 +27,13 @@ func (a SchemaBuyerProductItem) ToBuyerProductItem() *BuyerProductItem {
 // BuyerProductItem 仕入商品詳細实体
 type BuyerProductItem struct {
 	Model
-	RecordID *string `gorm:"column:record_id;size:36;index;"` // 记录ID
-	Creator  *string `gorm:"column:creator;size:36;index;"`   // 创建者
+	RecordID    *string `gorm:"column:record_id;size:36;index;"` // 记录ID
+	Creator     *string `gorm:"column:creator;size:36;index;"`   // 创建者
+	ProductCode *string
+	Name        *string
+	Price       *int64
+	Quantity    *int64
+	Unit        *string
 }
 
 func (a BuyerProductItem) String() string {
@@ -37,7 +42,7 @@ func (a BuyerProductItem) String() string {
 
 // TableName 表名
 func (a BuyerProductItem) TableName() string {
-	return a.Model.TableName("buyer_product_item")
+	return a.Model.TableName("buyer_product_items")
 }
 
 // ToSchemaBuyerProductItem 转换为仕入商品詳細对象

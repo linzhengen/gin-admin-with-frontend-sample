@@ -58,7 +58,7 @@ func (a Role) String() string {
 
 // TableName 表名
 func (a Role) TableName() string {
-	return a.Model.TableName("role")
+	return a.Model.TableName("roles")
 }
 
 // ToSchemaRole 转换为角色对象
@@ -122,7 +122,7 @@ type RoleMenu struct {
 
 // TableName 表名
 func (a RoleMenu) TableName() string {
-	return a.Model.TableName("role_menu")
+	return a.Model.TableName("role_menus")
 }
 
 // ToSchemaRoleMenu 转换为角色菜单对象

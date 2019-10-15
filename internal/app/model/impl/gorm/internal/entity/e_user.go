@@ -66,7 +66,7 @@ func (a User) String() string {
 
 // TableName 表名
 func (a User) TableName() string {
-	return a.Model.TableName("user")
+	return a.Model.TableName("users")
 }
 
 // ToSchemaUser 转换为用户对象
@@ -106,7 +106,7 @@ type UserRole struct {
 
 // TableName 表名
 func (a UserRole) TableName() string {
-	return a.Model.TableName("user_role")
+	return a.Model.TableName("user_roles")
 }
 
 // ToSchemaUserRole 转换为用户角色对象
