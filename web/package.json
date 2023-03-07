@@ -28,7 +28,7 @@
     "moment": "^2.19.3",
     "path-to-regexp": "^2.4.0",
     "prop-types": "^15.5.10",
-    "qs": "^6.5.0",
+    "qs": "^6.9.7",
     "react": "^16.6.3",
     "react-container-query": "^0.11.0",
     "react-document-title": "^2.0.3",
